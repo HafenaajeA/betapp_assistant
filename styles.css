@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+td:first-child,
+td:last-child {
+  width: 25%;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+  width: 16.66%;
+}
+
+th {
+  background: #001f3f;
+  color: white;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.match-row:hover {
+  background: #f1f1f1;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #001f3f;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.soccer13 {
+  display: none;
+}
+
+.show-soccer13 .soccer13 {
+  display: table-row;
+}
+
+/* Add these responsive styles at the end of the file */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 6px 2px;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Update media query for larger screens */
+@media screen and (min-width: 1024px) {
+  table {
+    max-width: 700px;
+  }
+
+  th,
+  td {
+    padding: 12px 6px;
+  }
+}
