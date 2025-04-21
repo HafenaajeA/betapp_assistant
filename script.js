@@ -1,6 +1,92 @@
 class BettingAssistant {
   constructor() {
     this.tickets = [];
+    this.predefinedTickets = [
+      // Ticket 1-81 (Soccer 13)
+      ["2", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 1
+      ["X", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 2
+      ["1", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 3
+      ["2", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 4
+      ["X", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 5
+      ["1", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 6
+      ["2", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 7
+      ["X", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 8
+      ["1", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 9
+      ["2", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 10
+      ["X", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 11
+      ["1", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 12
+      ["2", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 13
+      ["X", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 14
+      ["1", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 15
+      ["2", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 16
+      ["X", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 17
+      ["1", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 18
+      ["2", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 19
+      ["X", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 20
+      ["1", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 21
+      ["2", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 22
+      ["X", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 23
+      ["1", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 24
+      ["2", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 25
+      ["X", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 26
+      ["1", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "X"], // Ticket 27
+      ["2", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 28
+      ["X", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 29
+      ["1", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 30
+      ["2", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 31
+      ["X", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 32
+      ["1", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 33
+      ["2", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 34
+      ["X", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 35
+      ["1", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 36
+      ["2", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 37
+      ["X", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 38
+      ["1", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 39
+      ["2", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 40
+      ["X", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 41
+      ["1", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 42
+      ["2", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 43
+      ["X", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 44
+      ["1", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 45
+      ["2", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 46
+      ["X", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 47
+      ["1", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 48
+      ["2", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 49
+      ["X", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 50
+      ["1", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 51
+      ["2", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 52
+      ["X", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 53
+      ["1", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "2"], // Ticket 54
+      ["2", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 55
+      ["X", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 56
+      ["1", "X", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 57
+      ["2", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 58
+      ["X", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 59
+      ["1", "2", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 60
+      ["2", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 61
+      ["X", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 62
+      ["1", "1", "1", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 63
+      ["2", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 64
+      ["X", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 65
+      ["1", "X", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 66
+      ["2", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 67
+      ["X", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 68
+      ["1", "2", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 69
+      ["2", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 70
+      ["X", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 71
+      ["1", "1", "X", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 72
+      ["2", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 73
+      ["X", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 74
+      ["1", "X", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 75
+      ["2", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 76
+      ["X", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 77
+      ["1", "2", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 78
+      ["2", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 79
+      ["X", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 80
+      ["1", "1", "2", "2", "1", "X", "2", "2", "1", "X", "2", "2", "1"], // Ticket 81
+    ];
+
+    this.currentPredefinedIndex = 0;
     this.currentTicket = [];
     this.mode = 10; // Default to Soccer 10
     this.visibleTickets = 4; // Number of tickets to show initially
@@ -59,14 +145,37 @@ class BettingAssistant {
   }
 
   generateNextTicket() {
+    if (this.mode === 13) {
+      this.handleSoccer13Generation();
+    } else {
+      this.handleSoccer10Generation();
+    }
+  }
+
+  handleSoccer13Generation() {
+    if (this.currentPredefinedIndex >= this.predefinedTickets.length) {
+      alert("All predefined tickets have been generated");
+      return;
+    }
+
+    const nextTicket = this.predefinedTickets[this.currentPredefinedIndex];
+    this.currentPredefinedIndex++;
+
+    if (!this.ticketExists(nextTicket)) {
+      this.displayAndSelectTicket(nextTicket);
+      this.currentTicket = nextTicket;
+    } else {
+      this.handleSoccer13Generation(); // Skip already existing tickets
+    }
+  }
+
+  handleSoccer10Generation() {
     if (this.currentTicket.length === 0) {
-      // If no current ticket, generate a random one
       this.currentTicket = this.generateRandomTicket();
       this.displayAndSelectTicket(this.currentTicket);
       return;
     }
 
-    // Find next possible variation or generate new random ticket if no variation found
     let nextTicket = this.findNextVariation() || this.generateRandomTicket();
     if (nextTicket) {
       this.displayAndSelectTicket(nextTicket);
@@ -128,9 +237,15 @@ class BettingAssistant {
       return;
     }
 
+    if (this.mode === 13 && !this.isValidPredefinedTicket(selections)) {
+      alert("This ticket is not part of the predefined Soccer 13 tickets");
+      return;
+    }
+
     const ticket = {
       selections,
       gameType: this.mode,
+      isPredefined: this.mode === 13,
     };
 
     this.tickets.push(ticket);
@@ -138,6 +253,12 @@ class BettingAssistant {
     this.saveToStorage();
     this.updateStats();
     this.displayTickets();
+  }
+
+  isValidPredefinedTicket(selections) {
+    return this.predefinedTickets.some((ticket) =>
+      ticket.every((val, idx) => val === selections[idx])
+    );
   }
 
   displayTickets() {
@@ -347,6 +468,7 @@ class BettingAssistant {
 
         // Reset local state
         this.tickets = [];
+        this.currentPredefinedIndex = 0;
         this.currentTicket = [];
         this.visibleTickets = 4;
 
